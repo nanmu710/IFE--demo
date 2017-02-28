@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0 auto;
+	font-family:"Times New Roman", Times, serif;}
+#div1{height:auto;
+	
+	width:300px;}
+h1{margin:100px auto 30px;
+	text-align:center;}
+label{font-weight:bold;}
+input{height:30px;
+	border-radius:5px;}
+#text{width:180px;	
+	border:#CCC solid 1px;
+	text-align:left;}
+#button{border:none;
+	background-color:#06F;}	
+#inform{margin-left:50px;}
+</style>
+<script type="text/javascript">
+function check(){
+	var text1=document.getElementById("text");
+	var infor1=document.getElementById("inform");
+	var button1=document.getElementById("button");
+	var textvalue=text1.value;
+	if(textvalue=="" || textvalue==null){
+		infor1.innerHTML="姓名不能为空";
+		infor1.style.color="#f00";
+		button1.style.borderColor="#f00";
+	}else if(textvalue.length>3 && textvalue.length<17){
+		infor1.innerHTML="名称格式正确";
+		infor1.style.color="#0c3";
+		button1.style.borderColor="#0c3";
+	}else{
+		infor1.innerHTML="必填，4-16位字符";
+		button1.style.borderColor="#ccc";
+		infor1.style.color="#ccc";
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div1">
+<h1>表单验证</h1>
+<label>名称</label>
+<input id="text" type="text" />
+<input id="button" type="button" value="验证" onclick="check()" />
+<p id="inform">必填，4-16位字符</p>
+</div>
+</body>
+</html>
